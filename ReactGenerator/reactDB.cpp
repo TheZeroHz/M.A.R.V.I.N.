@@ -223,4 +223,21 @@ void reactDB::load(LoadFrom loader){
   react_DB[_distressed_][_neutral_][_handmassage_] = _curious_;
   react_DB[_distressed_][_negative_][_handmassage_] = _calm_;
 
+    ////////////////////// Head Massage //////////////////////
+  react_DB[_achiever_][_positive_][_handmassage_] = _affectionate_;
+  react_DB[_achiever_][_neutral_][_handmassage_] = _curious_;
+  react_DB[_achiever_][_negative_][_handmassage_] = _calm_;
+
+  react_DB[_balanced_][_positive_][_handmassage_] = _happy_;
+  react_DB[_balanced_][_neutral_][_handmassage_] = _excited_;
+  react_DB[_balanced_][_negative_][_handmassage_] = _calm_;
+
+  react_DB[_creative_][_positive_][_handmassage_] = _excited_;
+  react_DB[_creative_][_neutral_][_handmassage_] = _curious_;
+  react_DB[_creative_][_negative_][_handmassage_] = _calm_;
+
+  react_DB[_distressed_][_positive_][_handmassage_] = _affectionate_;
+  react_DB[_distressed_][_neutral_][_handmassage_] = _curious_;
+  react_DB[_distressed_][_negative_][_handmassage_] = _calm_;
+
 }

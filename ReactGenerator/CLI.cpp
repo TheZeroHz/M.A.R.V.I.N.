@@ -5,5 +5,13 @@ void CLI::showDoubleVec(Vector<double> &vec){
      Serial.print(vec[i]);
      Serial.print(" ");
     }
-    Serial.println();
+}
+
+template<typename T>
+void CLI::show(const T& value){
+  Serial.print(value);
+}
+
+void CLI::nl(){
+  Serial.println();
 }

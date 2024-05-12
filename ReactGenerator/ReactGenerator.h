@@ -24,25 +24,29 @@ class ReactGenerator {
 private:
     rewardDB rwdDB;
     reactDB rctDB;
-    CLI CMD;
-    Vector<double> reward_logs;
     Vector<Reaction> reaction_logs;
     int _WindowSize_=default_WindowSize;
-    
+    int _FrameSize_=default_FrameSize; 
 public:
+    CLI CMD;
+    Vector<double> reward_logs;
     CharacterState character;
     double reward_Multiplier[num_of_personality];
     
     ReactGenerator();
-    void setWindowSize(int _Min_,int _Max_);
+    void setFrameSize(int _size_);
+    int getFrameSize();
+    void setWindowSize(int _size_);
     int getWindowSize();
-    
+
+    void slideWindow(Vector<double> &arr, int _frameSize_, int _windowSize_);   
     void setReaction(Personality p, Mood m, Action a, Reaction e);
     Reaction getReaction(Personality p, Mood m, Action a);
     char *reactionName(Reaction R);
     void addReactionLogs(Reaction R);
     Reaction getReactionLog(int index);
     int getReactionLogsCount();
+    void showReactionLogs();
     
 
     void setRewardMultiplier(double achiever,double balanced,double creative,double distressed);
@@ -54,6 +58,7 @@ public:
     
     Mood predictMood();
     char *moodName(Mood M);
+    void showMoodDetails();
 };
 
 #endif /* REACTGENERATOR_H */

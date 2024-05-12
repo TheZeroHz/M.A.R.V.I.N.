@@ -19,5 +19,8 @@ class CLI{
 public:
 // Function to print all elements of a Vector
 void showDoubleVec(Vector<double> &vec);
+template<typename T>
+void show(const T& value);
+void nl();
 };
 #endif

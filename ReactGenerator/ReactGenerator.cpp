@@ -14,9 +14,16 @@ ReactGenerator::ReactGenerator() {
   character._reaction_ = _calm_;
 }
 
+void ReactGenerator::setFrameSize(int _size_){
+  _FrameSize_=_size_;
+}
+int ReactGenerator::getFrameSize(){
+  return _FrameSize_;
+}
+
 //###### How many cotigious log should be considered for upDate mood ####//
-void ReactGenerator::setWindowSize(int _Min_, int _Max_){
-  _WindowSize_=random(_Min_,_Max_+1);
+void ReactGenerator::setWindowSize(int _size_){
+  _WindowSize_=_size_;
 }
 //### get the size of window ###//
 int ReactGenerator::getWindowSize(){
@@ -47,10 +54,46 @@ char *ReactGenerator::reactionName(Reaction R) {
 
 
 //.|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||.
+//. ============================ Slider Karnel ================================== .
+//.|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||.
+
+void ReactGenerator::slideWindow(Vector<double> &arr, int _frameSize_, int _windowSize_) {
+  if(arr.size()==_windowSize_){
+    character.moodChanged=true;
+  }
+  if (arr.size() >= _windowSize_) {
+    character.moodChanged=true;
+    if (arr.size() > _frameSize_) arr.popFront(1);
+    Serial.print("Window:");
+    character.MoodNegativity=0;
+    character.MoodPositivity=0;
+    for (int i = arr.size() - _windowSize_; i < arr.size(); i++) {
+      if (arr[i]>= 0) character.MoodPositivity += arr[i];
+      else character.MoodNegativity += arr[i];
+      Serial.print(arr[i]);
+      Serial.print(" ");
+    }
+    CMD.nl();
+    Serial.print("Frame:");
+    for (int i = 0; i < arr.size(); i++) {
+      Serial.print(arr[i]);
+      Serial.print(" ");
+    }
+    CMD.nl();
+  }
+  else{
+    character.moodChanged=false;
+  }
+}
+
+
+
+//.|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||.
 //. ============================= Reaction Log ================================== .
 //.|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||.
 void ReactGenerator::addReactionLogs(Reaction R){
   reaction_logs.push_back(R);
+  if(reaction_logs.size()>_WindowSize_)reaction_logs.popFront(_WindowSize_);
 }
 Reaction ReactGenerator::getReactionLog(int index){
   return reaction_logs[index];
@@ -59,7 +102,14 @@ int ReactGenerator::getReactionLogsCount(){
   return reaction_logs.size();
 }
 
-
+void ReactGenerator::showReactionLogs(){
+    Serial.print("Reaction Logs: ");
+    for(int i=0;i<getReactionLogsCount();i++){
+    Serial.print(reactionName(getReactionLog(i)));
+    Serial.print(" ");
+    }
+    CMD.nl();
+}
 
 
 
@@ -76,8 +126,6 @@ int ReactGenerator::getReactionLogsCount(){
 
 //## Add every rewards from generated reaction to logs ##//
 void ReactGenerator::addRewardLogs(double x) {
-  if (x >= 0) character.positivity += x;
-  else character.negativity += x;
   reward_logs.push_back(x);
 }
 //## Get the rewards by index from logs ##//
@@ -90,7 +138,9 @@ Vector<double> ReactGenerator::getRewardLog(){
 void ReactGenerator::showRewardLogs(){
   Serial.print("Reward Logs: ");
   CMD.showDoubleVec(reward_logs);
+  CMD.nl();
 }
+
 //## Count How Many logs Have been added ##//
 int ReactGenerator::getRewardLogsCount() {
   return reward_logs.size();
@@ -108,10 +158,18 @@ char *ReactGenerator::moodName(Mood M) {
   }
 }
 
+void ReactGenerator::showMoodDetails(){
+  float positivity=(character.MoodPositivity / (character.MoodPositivity  - character.MoodNegativity))*100.0;
+  float negativity=(-character.MoodNegativity / (character.MoodPositivity  - character.MoodNegativity))*100.0;
+    Serial.print("positivity:");Serial.print(positivity);Serial.print("%");
+    Serial.print(" ");
+    Serial.print("negativity:");Serial.print(negativity);Serial.print("%");
+
+}
 Mood ReactGenerator::predictMood() {
   if(getReactionLogsCount()>=getWindowSize()){
-  double pos = character.positivity / (character.positivity - character.negativity);
-  double neg = -character.negativity / (character.positivity - character.negativity);
+  double pos = character.MoodPositivity / (character.MoodPositivity  - character.MoodNegativity);
+  double neg = -character.MoodNegativity / (character.MoodPositivity  - character.MoodNegativity);
   if (pos - neg > random(0.15, 0.25)) {
     character._mood_ = _positive_;
     return _positive_;

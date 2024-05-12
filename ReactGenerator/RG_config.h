@@ -11,8 +11,8 @@
 #define num_of_action 14
 #define num_of_reaction 17
 
-#define default_WindowSize 5
-#define max_framesize 10
+#define default_FrameSize 20
+#define default_WindowSize 4
 #define reward_multiplier_randomness 10.5 //in percentage
 
 struct reward_values {
@@ -37,6 +37,9 @@ enum Mood { _positive_,
             _negative_,
 };
 
+enum Inertia{ _HighInertia_,
+              _LowInertia_
+};
 enum Action { _hithead_,
               _hitbelly_,
               _hithand_,
@@ -76,6 +79,8 @@ struct CharacterState {
   Personality _personality_;
   Mood _mood_;
   Reaction _reaction_;
-  double positivity = 0, negativity = 0;
+  Inertia _inertia_;
+  double MoodPositivity = 1, MoodNegativity = 0;
+  bool moodChanged=false;
 };
 #endif
