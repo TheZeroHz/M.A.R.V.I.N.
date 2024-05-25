@@ -22,11 +22,14 @@ This repository contains the code for an audio transcription service using Flask
 
 ## Installation
   **Install server dependencies:**   
+-download and install python if not installed from [here](https://www.python.org/downloads/)
 - open CMD
 - ```sh
-    pip install Flask SpeechRecognition
+    pip3 install flask
     ```
-
+- ```sh
+    pip3 install SpeechRecognition pydub
+    ```
 ## Usage
 
 1. **Run the Flask server:**
