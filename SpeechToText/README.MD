@@ -42,9 +42,12 @@ This repository contains the code for an audio transcription service using Flask
 ```
 
 ![Step 2](img/S2.PNG)
-3. **Receive the transcription:**
 
-    The server will respond with a JSON object containing the transcription.
+## Arduino IDE
+1. **Download 'SpeechToText_ESP32' and open in Arduino IDE. Set Wifi Credentials and STT timer.**
+
+![Step 3](img/S3.PNG)
+
 
 ## Example
 
