@@ -3,7 +3,7 @@
 This repository contains the code for an audio transcription service using Flask and the `speech_recognition` library. The service accepts audio files, transcribes the speech to text, and returns the transcription as a JSON response.
 ## Supported Boards
 - ESP32 S3 (Successfully Tested)
--ESP32 DOIT Devkit V1 (Under Test)
+- ESP32 DOIT Devkit V1 (Under Test)
 
 ## Features
 - Upload audio files for transcription.
@@ -20,9 +20,8 @@ This repository contains the code for an audio transcription service using Flask
 - Arduino IDE 2.3.2
 - I2S MIC (INMP-331)
 
-## Installation
-  **Install server dependencies:**   
--download and install python if not installed from [here](https://www.python.org/downloads/)
+## Install server dependencies   
+- download and install python if not installed from [here](https://www.python.org/downloads/)
 - open CMD on windows [if you are using linux please search google command for the following]
 - ```sh
     pip3 install flask
@@ -31,13 +30,10 @@ This repository contains the code for an audio transcription service using Flask
     pip3 install SpeechRecognition pydub
     ```
 
-## Usage
+## Run Server
 
-1. **Run the Flask server:**
+1. **Download stt_api.py and see the directory of the downloaded file**
 ![Step 1](img/S1.PNG)
-    ```sh
-    python app.py
-    ```
 
 2. **Upload audio files:**
 
