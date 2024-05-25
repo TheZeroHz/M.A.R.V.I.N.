@@ -36,9 +36,11 @@ This repository contains the code for an audio transcription service using Flask
 ![Step 1](img/S1.PNG)
 
 2. **Open CMD Then Goto that folder and Run command**
- ```sh
+
+```sh
     python stt_api.py
-    ```
+```
+
 ![Step 2](img/S2.PNG)
 3. **Receive the transcription:**
 
