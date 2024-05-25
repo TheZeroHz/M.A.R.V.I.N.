@@ -35,18 +35,11 @@ This repository contains the code for an audio transcription service using Flask
 1. **Download stt_api.py and see the directory of the downloaded file**
 ![Step 1](img/S1.PNG)
 
-2. **Upload audio files:**
-
-    - Use a tool like Postman or curl to send a POST request to `http://localhost:8888/uploadAudio` with the audio file in the body.
-
-    Example using `curl`:
-
-    ```sh
-    curl -X POST -H "Content-Type: audio/wav" --data-binary @your-audio-file.wav http://localhost:8888/uploadAudio
+2. **Open CMD Then Goto that folder and Run command**
+ ```sh
+    python stt_api.py
     ```
-
-    Replace `your-audio-file.wav` with the path to your audio file.
-
+![Step 2](img/S2.PNG)
 3. **Receive the transcription:**
 
     The server will respond with a JSON object containing the transcription.
