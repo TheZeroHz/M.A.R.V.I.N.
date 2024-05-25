@@ -21,9 +21,11 @@ This repository contains the code for an audio transcription service using Flask
 - I2S MIC (INMP-331)
 
 ## Installation
-  **Install server dependencies:**
-    1. open CMD
-    2. pip install Flask SpeechRecognition
+  **Install server dependencies:**   
+- open CMD
+- ```sh
+    pip install Flask SpeechRecognition
+    ```
 
 ## Usage
 
