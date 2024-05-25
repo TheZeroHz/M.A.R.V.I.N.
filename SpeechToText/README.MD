@@ -1,13 +1,14 @@
 # Audio Transcription Service
 
 This repository contains the code for an audio transcription service using Flask and the `speech_recognition` library. The service accepts audio files, transcribes the speech to text, and returns the transcription as a JSON response.
+## Supported Boards
+- ESP32 S3 (Successfully Tested)
+-ESP32 DOIT Devkit V1 (Under Test)
 
 ## Features
 - Upload audio files for transcription.
 - Uses `speech_recognition` library for speech-to-text conversion.
 - Simple Flask web server to handle file uploads and return transcriptions.
-
-## Prerequisites
 
 ## Before you begin, ensure you have met the following requirements:
 ### Server Requirements:
@@ -20,26 +21,9 @@ This repository contains the code for an audio transcription service using Flask
 - I2S MIC (INMP-331)
 
 ## Installation
-
-1. **Clone the repository:**
-
-    ```sh
-    git clone https://github.com/yourusername/your-repo-name.git
-    cd your-repo-name
-    ```
-
-2. **Create a virtual environment:**
-
-    ```sh
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    ```
-
-3. **Install dependencies:**
-
-    ```sh
-    pip install Flask SpeechRecognition
-    ```
+  **Install server dependencies:**
+    1. open CMD
+    2. pip install Flask SpeechRecognition
 
 ## Usage
 
