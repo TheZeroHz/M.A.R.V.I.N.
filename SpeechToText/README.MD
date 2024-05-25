@@ -34,7 +34,7 @@ This repository contains the code for an audio transcription service using Flask
 ## Usage
 
 1. **Run the Flask server:**
-![Step 1](img/S1.png)
+![Step 1](img/S1.PNG)
     ```sh
     python app.py
     ```
