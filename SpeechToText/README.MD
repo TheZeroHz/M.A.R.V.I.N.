@@ -30,12 +30,12 @@ This repository contains the code for an audio transcription service using Flask
     pip3 install SpeechRecognition pydub
     ```
 
-## Run Server
+## Usage
 
-1. **Download stt_api.py and see the directory of the downloaded file**
+- Step1: **Download stt_api.py and see the directory of the downloaded file**
 ![Step 1](img/S1.PNG)
 
-2. **Open CMD Then Goto that folder and Run command**
+- Step2: **Open CMD Then Goto that folder and Run command**
 
 ```sh
     python stt_api.py
@@ -43,21 +43,6 @@ This repository contains the code for an audio transcription service using Flask
 
 ![Step 2](img/S2.PNG)
 
-## Arduino IDE
-1. **Download 'SpeechToText_ESP32' and open in Arduino IDE. Set Wifi Credentials and STT timer.**
+- Step3: **Download 'SpeechToText_ESP32' and open in Arduino IDE. Set Wifi Credentials and STT timer.**
 
 ![Step 3](img/S3.PNG)
-
-
-## Example
-
-![Example Usage](example.png)
-
-## Project Structure
-
-```plaintext
-.
-├── app.py               # Main server code
-├── requirements.txt     # List of dependencies
-├── README.md            # This file
-└── example.png          # Example image for usage
