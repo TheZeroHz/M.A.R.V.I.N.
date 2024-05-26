@@ -1,6 +1,9 @@
 # ESP32 Free Speech To Text without any API Key
 
 This repository contains the code for an audio transcription service using Flask and the `speech_recognition` library. The service accepts audio files, transcribes the speech to text, and returns the transcription as a JSON response.
+## Demo
+![Demo1](img/D1.PNG)
+![Demo2](img/D2.PNG)
 ## Supported Boards
 - ESP32 S3 (Successfully Tested)
 - ESP32 DOIT Devkit V1 (Under Test)
