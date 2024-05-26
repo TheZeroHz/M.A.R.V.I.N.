@@ -24,7 +24,7 @@ This repository contains the code for an audio transcription service using Flask
 
 ## Install server dependencies   
 - download and install python if not installed from [here](https://www.python.org/downloads/)
-- open CMD on windows  [Linux user open terminal & Run Equivalent Commands]
+- **open CMD on windows**  [Linux user open terminal & Run Equivalent Commands]
 - ```sh
     pip3 install flask
     ```
@@ -51,5 +51,5 @@ This repository contains the code for an audio transcription service using Flask
 
 
 ## HardWare Setup
--I'm Using INMP441 & ESP32 S3 wroom-1 N16R8. [Note: Use your own board and I2S Pins]
+- **I'm Using INMP441 & ESP32 S3 wroom-1 N16R8.**     [Note: Use your own board and I2S Pins]
 ![Hardware Setup](img/HardWareSetUP.png)
