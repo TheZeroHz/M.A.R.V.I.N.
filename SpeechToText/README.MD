@@ -20,7 +20,7 @@ This repository contains the code for an audio transcription service using Flask
 ### ESP32 Requirements
 - ESP Version 2.0.14
 - Arduino IDE 2.3.2
-- I2S MIC (INMP-331)
+- I2S MIC (INMP-441)
 
 ## Install server dependencies   
 - download and install python if not installed from [here](https://www.python.org/downloads/)
@@ -51,4 +51,5 @@ This repository contains the code for an audio transcription service using Flask
 
 
 ## HardWare Setup
-
+-I'm Using INMP441 & ESP32 S3 wroom-1 N16R8. [Note: Use your own board and I2S Pins]
+![Hardware Setup](img/HardWareSetUP.png)
