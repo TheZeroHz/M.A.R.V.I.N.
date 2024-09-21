@@ -40,6 +40,24 @@ enum Mood { _positive_,
 enum Inertia{ _HighInertia_,
               _LowInertia_
 };
+
+/*
+##############
+sudden touch head+shake=hithead
+sudden touch belly+shake=hitbelly
+sudden touch back+shake=hitback
+no touch+fall=fall
+hold touch+shake=?
+hang......fall
+hold touch+shake=shake
+wakeword=call
+face:who:user=recognized
+hold hand=handmassage
+hold head=headmassage
+hold belly=bellymassage
+holdback=backmassage
+#################
+*/
 enum Action { _hithead_,
               _hitbelly_,
               _hithand_,
