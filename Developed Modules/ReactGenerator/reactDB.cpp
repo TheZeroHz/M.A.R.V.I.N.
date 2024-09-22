@@ -224,20 +224,58 @@ void reactDB::load(LoadFrom loader){
   react_DB[_distressed_][_negative_][_handmassage_] = _calm_;
 
     ////////////////////// Head Massage //////////////////////
-  react_DB[_achiever_][_positive_][_handmassage_] = _affectionate_;
-  react_DB[_achiever_][_neutral_][_handmassage_] = _curious_;
-  react_DB[_achiever_][_negative_][_handmassage_] = _calm_;
+  react_DB[_achiever_][_positive_][_headmassage_] = _affectionate_;
+  react_DB[_achiever_][_neutral_][_headmassage_] = _curious_;
+  react_DB[_achiever_][_negative_][_headmassage_] = _calm_;
 
-  react_DB[_balanced_][_positive_][_handmassage_] = _happy_;
-  react_DB[_balanced_][_neutral_][_handmassage_] = _excited_;
-  react_DB[_balanced_][_negative_][_handmassage_] = _calm_;
+  react_DB[_balanced_][_positive_][_headmassage_] = _happy_;
+  react_DB[_balanced_][_neutral_][_headmassage_] = _excited_;
+  react_DB[_balanced_][_negative_][_headmassage_] = _calm_;
 
-  react_DB[_creative_][_positive_][_handmassage_] = _excited_;
-  react_DB[_creative_][_neutral_][_handmassage_] = _curious_;
-  react_DB[_creative_][_negative_][_handmassage_] = _calm_;
+  react_DB[_creative_][_positive_][_headmassage_] = _happy_;
+  react_DB[_creative_][_neutral_][_headmassage_] = _affectionate_;
+  react_DB[_creative_][_negative_][_headmassage_] = _calm_;
 
-  react_DB[_distressed_][_positive_][_handmassage_] = _affectionate_;
-  react_DB[_distressed_][_neutral_][_handmassage_] = _curious_;
-  react_DB[_distressed_][_negative_][_handmassage_] = _calm_;
+  react_DB[_distressed_][_positive_][_headmassage_] = _superhappy_;
+  react_DB[_distressed_][_neutral_][_headmassage_] = _playful_;
+  react_DB[_distressed_][_negative_][_headmassage_] = _curious_;
+
+
+      ////////////////////// Belly Massage //////////////////////
+  react_DB[_achiever_][_positive_][_bellymassage_] = _affectionate_;
+  react_DB[_achiever_][_neutral_][_bellymassage_] = _curious_;
+  react_DB[_achiever_][_negative_][_bellymassage_] = _calm_;
+
+  react_DB[_balanced_][_positive_][_bellymassage_] = _happy_;
+  react_DB[_balanced_][_neutral_][_bellymassage_] = _excited_;
+  react_DB[_balanced_][_negative_][_bellymassage_] = _calm_;
+
+  react_DB[_creative_][_positive_][_bellymassage_] = _excited_;
+  react_DB[_creative_][_neutral_][_bellymassage_] = _curious_;
+  react_DB[_creative_][_negative_][_bellymassage_] = _calm_;
+
+  react_DB[_distressed_][_positive_][_bellymassage_] = _affectionate_;
+  react_DB[_distressed_][_neutral_][_bellymassage_] = _curious_;
+  react_DB[_distressed_][_negative_][_bellymassage_] = _calm_;
+
+
+
+
+      ////////////////////// Back Massage //////////////////////
+  react_DB[_achiever_][_positive_][_backmassage_] = _affectionate_;
+  react_DB[_achiever_][_neutral_][_backmassage_] = _curious_;
+  react_DB[_achiever_][_negative_][_backmassage_] = _calm_;
+
+  react_DB[_balanced_][_positive_][_backmassage_] = _happy_;
+  react_DB[_balanced_][_neutral_][_backmassage_] = _excited_;
+  react_DB[_balanced_][_negative_][_backmassage_] = _calm_;
+
+  react_DB[_creative_][_positive_][_backmassage_] = _excited_;
+  react_DB[_creative_][_neutral_][_backmassage_] = _curious_;
+  react_DB[_creative_][_negative_][_backmassage_] = _calm_;
+
+  react_DB[_distressed_][_positive_][_backmassage_] = _affectionate_;
+  react_DB[_distressed_][_neutral_][_backmassage_] = _curious_;
+  react_DB[_distressed_][_negative_][_backmassage_] = _calm_;
 
 }

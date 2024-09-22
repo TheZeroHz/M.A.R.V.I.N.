@@ -26,11 +26,44 @@ enum LoadFrom{
   _CLOUD_
 };
 
+/**/
+enum Task{
+  _sing_,
+  _dance_,
+  _playwin_,
+  _playlose_,
+  _sleep_,
+  _fire_,
+  _bore_,
+  _spit_,
+};
+
+
+/*
+Achiever: Predominantly positive moods
+
+Creative: A mix of moods, with a slight tilt towards positive and neutral
+
+Balanced: An even distribution of positive, negative, and neutral moods
+
+Distressed: Predominantly negative moods
+*/
 enum Personality { _achiever_,
-                   _balanced_,
                    _creative_,
+                   _balanced_, 
                    _distressed_,
 };
+
+/*
+Normal: React Normally
+Phyco: React Abnormally
+*/
+
+enum MentalState{
+  _normal_,
+  _phyco_,
+};
+
 
 enum Mood { _positive_,
             _neutral_,
@@ -40,24 +73,6 @@ enum Mood { _positive_,
 enum Inertia{ _HighInertia_,
               _LowInertia_
 };
-
-/*
-##############
-sudden touch head+shake=hithead
-sudden touch belly+shake=hitbelly
-sudden touch back+shake=hitback
-no touch+fall=fall
-hold touch+shake=?
-hang......fall
-hold touch+shake=shake
-wakeword=call
-face:who:user=recognized
-hold hand=handmassage
-hold head=headmassage
-hold belly=bellymassage
-holdback=backmassage
-#################
-*/
 enum Action { _hithead_,
               _hitbelly_,
               _hithand_,
@@ -98,7 +113,7 @@ struct CharacterState {
   Mood _mood_;
   Reaction _reaction_;
   Inertia _inertia_;
-  double MoodPositivity = 1, MoodNegativity = 0;
+  double MoodPositivity = 0.5, MoodNegativity = -0.5;
   bool moodChanged=false;
 };
 #endif

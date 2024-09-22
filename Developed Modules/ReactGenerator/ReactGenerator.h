@@ -16,6 +16,7 @@
 #define REACTGENERATOR_H
 #include<Arduino.h>
 #include<esp_random.h>
+#include "smaPersonality.h"
 #include "Vector.h"
 #include "rewardDB.h"
 #include "reactDB.h"
@@ -24,7 +25,9 @@ class ReactGenerator {
 private:
     rewardDB rwdDB;
     reactDB rctDB;
+    SMA smaAttitude;
     Vector<Reaction> reaction_logs;
+    Vector<Mood> mood_logs;    
     int _WindowSize_=default_WindowSize;
     int _FrameSize_=default_FrameSize; 
 public:
@@ -32,7 +35,7 @@ public:
     Vector<double> reward_logs;
     CharacterState character;
     double reward_Multiplier[num_of_personality];
-    
+    int moodChangeCounter=0;
     ReactGenerator();
     void setFrameSize(int _size_);
     int getFrameSize();
@@ -59,6 +62,16 @@ public:
     Mood predictMood();
     char *moodName(Mood M);
     void showMoodDetails();
+    void addMoodLogs(Mood M);
+    void showMoodLogs();
+    Mood getMoodLog(int index);
+    int getMoodLogsCount();
+
+    Personality predictPersonality();
+    char *personalityName(Personality P);
+    
+    char * getActionName(Action action);
+    Action getActionByName(const char* actionName);
 };
 
 #endif /* REACTGENERATOR_H */
